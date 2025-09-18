@@ -1,0 +1,214 @@
+<!--
+Wedding Website
+INSTRUCTIONS:
+- Replace all TODOs with your real details (names, date, venues, registry links, images).
+- Edit style.css for colors/fonts/layout.
+- Edit script.js for interactivity.
+- Open index.html in your browser to preview.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Destined'25</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./fontawesome-free-7.0.1-web/fontawesome-free-7.0.1-web/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar" aria-label="Main Navigation">
+      <div class="nav-logo"><i class="fa-solid fa-heart"></i> Destined'25</div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-list" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-list" id="nav-list">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#invitation">Invitation</a></li>
+  <li><a href="#gift">Gift</a></li>
+  <li><a href="#gallery">Gallery</a></li>
+  <li><a href="#vendors">Vendors</a></li>
+  <li><a href="#location">Location</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="hero" tabindex="-1">
+      <h1><i class="fa-solid fa-heart"></i> Sunshine & Daniel</h1>
+      <!-- <div class="date">TODO: Wedding Date</div> -->
+      <p>✨ Welcome to our wedding website! ✨ We are so excited to share this special journey with you and can’t wait to celebrate our big day surrounded by the people we love most. Here, you’ll find everything you need to know about our wedding — from the invitation and location details to our gift registry and photo gallery. We hope this space makes it easy for you to join in our joy, and we truly look forward to creating unforgettable memories together.</p>
+      <div class="hero-ctas">
+        <a href="#invitation" class="cta">View Registry</a>
+        <a href="#location" class="cta">View Location</a>
+
+
+
+        
+      </div>
+    </section>
+    <!-- Invitation Section -->
+    <section id="invitation" tabindex="-1">
+      <div class="mobile-countdown" id="mobile-countdown"></div>
+      <div class="invitation-details">
+        <h2>You're Invited!</h2>
+        <p><strong>Date:</strong> December 13 2025</p>
+        <!-- <p><strong>Ceremony:</strong> TODO: Ceremony Venue, Time</p> -->
+        <p><strong>Reception:</strong> Wadlas Event Center, 12pm</p>
+        <p><strong>Dress Code:</strong> Lavander,Purple & Gold</p>
+      </div>
+      <form class="rsvp-form" aria-label="RSVP Form" autocomplete="off">
+        <div class="rsvp-success" style="display:none;"></div>
+    <!-- <div class="mobile-countdown" id="mobile-countdown" style="height: 30px; padding-bottom: 30px;"> <h4 style="padding-bottom: 20px;">DESTINED'25</h1></div> -->
+        <label for="rsvp-name">Your Name *</label>
+        <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Full Name" />
+        <label for="rsvp-email">Email</label>
+        <input type="email" id="rsvp-email" name="email" autocomplete="email" placeholder="Email (optional)" />
+        <label for="rsvp-attending">Will you attend? *</label>
+        <select id="rsvp-attending" name="attending" required>
+          <option value="">Select...</option>
+          <option value="Yes">Yes, I will attend</option>
+          <option value="No">No, I can't make it</option>
+        </select>
+        <label for="rsvp-notes">Notes</label>
+        <textarea id="rsvp-notes" name="notes" rows="2" placeholder="Anything you'd like us to know?"></textarea>
+        <button type="submit">Send RSVP</button>
+          <div class="rsvp-contacts">
+            <div class="rsvp-contacts-title">RSVP Contacts</div>
+            <ul class="rsvp-contact-list">
+              <li><span class="rsvp-contact-name">Jane:</span> <span class="rsvp-contact-number">08102157873 <i class="fa-solid fa-phone"></i> <a href="https://wa.me/2348102157873?text=Hello%20I%20would%20like%20to%20confirm%20my%20attendance!
+"><i class="fa-brands fa-whatsapp"></i></a></span></li>
+              <li><span class="rsvp-contact-name">Sam:</span> <span class="rsvp-contact-number">09034307246 <i class="fa-solid fa-phone"></i> <a href="https://wa.me/2349034307246?text=Hello%20I%20would%20like%20to%20confirm%20my%20attendance!
+"><i class="fa-brands fa-whatsapp"></i></a>  </span></li>
+            </ul>
+          </div>
+  <button type="button" class="invitation-btn" onclick="window.open('./destined25-photo-download-1of1/highlights/destined\'25 qr code.png','_blank')">Strictly By Invitation</button>
+  <div class="rsvp-list" aria-live="polite" style="display:none;"></div>
+        <!-- Registry Section: Marriage Books -->
+        <!-- Account Section -->
+  <h2 class="cash-gift-heading" style="margin-top: 90px;"><i class="fa-solid fa-money-bill-wave"></i> Cash Gift</h2>
+  <div class="account-section">
+          <div class="account-card groom">
+            <div class="account-title"><i class="fa-solid fa-user"></i> Groom's Account</div>
+            <div class="account-details">
+              <span class="account-number">0119803944</span>
+              <span class="bank">GTB</span>
+              <span class="name">Daniel Okolie</span>
+            </div>
+          </div>
+          <div class="account-card bride">
+            <div class="account-title"><i class="fa-solid fa-user"></i> Bride's Account</div>
+            <div class="account-details">
+              <span class="account-number">3092298852</span>
+              <span class="bank">FirstBank</span>
+              <span class="name">Mercy Adekunle</span>
+            </div>
+          </div>
+        </div>
+        <!-- Registry Section: Marriage Books -->
+        <section id="registry-books" class="registry-books-section" tabindex="-1">
+          <div class="registry-books-bg" style="background-image: url('./highlights/marriage book.png');"></div>
+          <div class="registry-books-content">
+            <h2><i class="fa-solid fa-book-heart"></i> Marriage Book Registry</h2>
+            <p>We love books! If you'd like to gift us a marriage book, you can shop from <a href="https://rhbooks.com.ng/?s=Marriage&post_type=product" target="_blank" rel="noopener" class="book-link">RH Books</a>. Your thoughtful gift will help us build a library of wisdom and love for our journey together.</p>
+            <a href="https://rhbooks.com.ng/?s=Marriage&post_type=product" target="_blank" rel="noopener" class="cta book-cta">Shop Marriage Books</a>
+          </div>
+        </section>
+        <!-- Honeymoon Support Section -->
+        <section id="honeymoon-support" class="honeymoon-support-section" tabindex="-1">
+          <div class="honeymoon-bg" style="background-image: url('./highlights/honeymoon.png');"></div>
+          <div class="honeymoon-content">
+            <h2><i class="fa-solid fa-umbrella-beach"></i> Honeymoon Support</h2>
+            <p>Help us make our honeymoon unforgettable! If you'd like to support, you can send a gift to:</p>
+            <div class="honeymoon-account-card">
+              <span class="account-number">3092298852</span>
+              <span class="bank">FirstBank</span>
+              <span class="name">Mercy Adekunle</span>
+            </div>
+          </div>
+        </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section -->
+    <section id="gallery" tabindex="-1">
+      <h2>Gallery</h2>
+      <div class="gallery-grid" aria-label="Photo Gallery">
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-4.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-4.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-4.jpg" alt="Wedding photo SD-4" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-5.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-5.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-5.jpg" alt="Wedding photo SD-5" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-6.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-6.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-6.jpg" alt="Wedding photo SD-6" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-7.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-7.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-7.jpg" alt="Wedding photo SD-7" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-8.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-8.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-8.jpg" alt="Wedding photo SD-8" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-9.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-9.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-9.jpg" alt="Wedding photo SD-9" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-10.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-10.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-10.jpg" alt="Wedding photo SD-10" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-11.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-11.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-11.jpg" alt="Wedding photo SD-11" />
+        </button>
+        <button class="gallery-thumb" tabindex="0" aria-label="Open SD-12.jpg" data-full="./destined25-photo-download-1of1/highlights/SD-12.jpg" aria-haspopup="dialog">
+          <img src="./destined25-photo-download-1of1/highlights/SD-12.jpg" alt="Wedding photo SD-12" />
+        </button>
+      </div>
+      <!-- Lightbox Modal -->
+      <div class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" tabindex="-1">
+        <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <img class="lightbox-img" src="" alt="Full size wedding photo" />
+        <div class="lightbox-controls">
+          <button class="lightbox-btn" aria-label="Previous photo" title="Previous" tabindex="0">&#8592;</button>
+          <button class="lightbox-btn" aria-label="Next photo" title="Next" tabindex="0">&#8594;</button>
+        </div>
+      </div>
+    </section>
+    <!-- Location Section -->
+    <section id="location" tabindex="-1">
+      <div class="location-details">
+        <h2>Location</h2>
+        <p><strong>Venue:</strong> Wadlas Events Center</p>
+        <p><strong>Address:</strong><a href=" https://maps.app.goo.gl/Udsq1sgCDeiTqvrr5"> Wadlas Events Center ikorodu, ago-eko,ikorodu 104101, Lagos</a>  </p>
+    
+        <p><strong>Parking:</strong> Complimentary parking is available</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.5529170428167!2d3.6253730740462418!3d6.57796632252997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103be5c1d167d407%3A0xd492395a13c1ca0f!2sWadlas%20Events%20Centre%2C%20Ikorodu!5e0!3m2!1sen!2sng!4v1758147962995!5m2!1sen!2sng" width="95%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+    <!-- Vendors Section -->
+    <section id="vendors" class="vendors-section" tabindex="-1">
+      <div class="vendors-content">
+        <h2><i class="fa-solid fa-star"></i> Our Amazing Vendors</h2>
+        <p>We are grateful to work with these talented professionals who make our day special:</p>
+        <ul class="vendors-list">
+          <li><span class="vendor-icon"><i class="fa-solid fa-camera-retro"></i></span> <strong>Photography:</strong> DreamLens Studio</li>
+          <li><span class="vendor-icon"><i class="fa-solid fa-utensils"></i></span> <strong>Catering:</strong> TasteBuds Events</li>
+          <li><span class="vendor-icon"><i class="fa-solid fa-music"></i></span> <strong>Music & DJ:</strong> SoundWave Entertainment</li>
+          <li><span class="vendor-icon"><i class="fa-solid fa-gem"></i></span> <strong>Decor:</strong> Elegant Touch Decorators</li>
+          <li><span class="vendor-icon"><i class="fa-solid fa-birthday-cake"></i></span> <strong>Cake:</strong> Sweet Moments Bakery</li>
+          <li><span class="vendor-icon"><i class="fa-solid fa-bus"></i></span> <strong>Transport:</strong> Royal Rides</li>
+        </ul>
+      </div>
+    </section>
+
+
+
+
+  <footer>
+    <div>With love, Sunshine & Daniel &mdash; 2025</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
