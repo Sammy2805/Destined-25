@@ -2,32 +2,120 @@
 // Edit this file for all interactive features. See comments for customization.
 
 // --- NAVIGATION ---
-const navToggle = document.querySelector('.nav-toggle');
-const navList = document.getElementById('nav-list');
-if (navToggle && navList) {
-  navToggle.addEventListener('click', function() {
-    const expanded = navList.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', expanded);
+// Hamburger menu logic
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navList = document.getElementById('nav-list');
+  let navOverlay = document.querySelector('.nav-overlay');
+  if (!navOverlay) {
+    navOverlay = document.createElement('div');
+    navOverlay.className = 'nav-overlay';
+    document.body.appendChild(navOverlay);
+  }
+  // Hamburger menu logic for mobile navigation
+  if (navToggle && navList && navOverlay) {
+    navToggle.addEventListener('click', function() {
+      navToggle.classList.toggle('open');
+      navList.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+    });
+
+    navOverlay.addEventListener('click', function() {
+      navToggle.classList.remove('open');
+      navList.classList.remove('open');
+      navOverlay.classList.remove('open');
+    });
+
+    // Close menu on link click
+    navList.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        navToggle.classList.remove('open');
+        navList.classList.remove('open');
+        navOverlay.classList.remove('open');
+      });
+    });
+  }
+  navToggle && navToggle.addEventListener('click', function() {
+    if (navList.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
-  document.querySelectorAll('.nav-list a, .cta').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const target = document.querySelector(href);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-          target.focus({ preventScroll: true });
-          if (navList.classList.contains('open')) navList.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', false);
-        }
+  navOverlay && navOverlay.addEventListener('click', closeMenu);
+  // Close menu on ESC
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && navList.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+  // Close menu when a nav link is clicked
+  navList && navList.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (link) {
+      closeMenu();
+      // Let browser handle navigation
+    }
+  });
+  // Section slide-in effect on scroll
+  const slideSections = document.querySelectorAll('.redesigned-card, .gallery-section, .vendors-section, .location-section, .registry-books-section, .honeymoon-support-section');
+  function handleSectionScroll() {
+    slideSections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 60) {
+        section.classList.add('section-visible');
+        section.classList.remove('section-hidden');
+      } else {
+        section.classList.remove('section-visible');
+        section.classList.add('section-hidden');
       }
     });
-  });
-}
+  }
+  window.addEventListener('scroll', handleSectionScroll);
+  window.addEventListener('resize', handleSectionScroll);
+  handleSectionScroll();
+});
 
 // --- RSVP FORM ---
 // --- MOBILE COUNTDOWN ---
+// --- MAIN COUNTDOWN (Home Page) ---
+function updateMainCountdown() {
+  const countdownEl = document.getElementById('main-countdown');
+  if (!countdownEl) return;
+  const targetDate = new Date('2025-12-13T00:00:00');
+  const now = new Date();
+  let diff = targetDate - now;
+  if (diff < 0) {
+    countdownEl.innerHTML = '<span style="font-size:2em;color:#b76e79;font-weight:700;">The big day is here!</span>';
+    return;
+  }
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+  countdownEl.innerHTML = `
+    <div style="display:flex;gap:2rem;justify-content:center;align-items:center;">
+      <div style="text-align:center;">
+        <div style="font-size:2.5em;color:#fff;font-weight:800;">${days}</div>
+        <div style="font-size:1.1em;color:#fff;">Days</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2.5em;color:#a16069;font-weight:800;">${hours}</div>
+        <div style="font-size:1.1em;color:#a16069;">Hours</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2.5em;color:#fff;font-weight:800;">${minutes}</div>
+        <div style="font-size:1.1em;color:#fff;">Minutes</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:2.5em;color:#a16069;font-weight:800;">${seconds}</div>
+        <div style="font-size:1.1em;color:#a16069;">Seconds</div>
+      </div>
+    </div>
+  `;
+}
+setInterval(updateMainCountdown, 1000);
+document.addEventListener('DOMContentLoaded', updateMainCountdown);
 function updateMobileCountdown() {
   const countdownEl = document.getElementById('mobile-countdown');
   if (!countdownEl) return;
@@ -172,3 +260,19 @@ document.querySelectorAll('.registry-list a').forEach(link => {
 
 // --- Progressive Enhancement ---
 // All anchor navigation and content works without JS. RSVP and lightbox require JS for enhancements
+
+// --- Sliding and Scrolling Effect for Sections ---
+document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('main section');
+  const observer = new window.IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+});

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitation - Destined'25</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fontawesome-free-7.0.1-web/fontawesome-free-7.0.1-web/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo"><i class="fa-solid fa-heart" style="color: #ff0537;"></i>Destined'25</div>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="invitation.html">Invitation</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="registry.html">Registry</a></li>
+        <li><a href="vendors.html">Vendors</a></li>
+        <li><a href="location.html">Location</a></li>
+      </ul>
+      <div class="nav-overlay"></div>
+    </nav>
+  </header>
+
+
+  <header>
+    <nav class="navbar">
+
+ 
+      <ul class="nav-list" id="nav-list">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="invitation.html">Invitation</a></li>
+  <li><a href="registry.html">Registry</a></li>
+  <li><a href="gallery.html">Gallery</a></li>
+  <li><a href="vendors.html">Vendors</a></li>
+  <li><a href="location.html">Location</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="redesigned-invitation" id="invitation" tabindex="-1" style="min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <div class="mobile-countdown" id="mobile-countdown"></div>
+      <div class="invitation-details redesigned-card" style="max-width: 500px; margin-bottom: 2rem; text-align: center;">
+        <h2 class="redesigned-section-title">You're Invited!</h2>
+        <p style="font-size: 1.2rem; color: #b76e79;"><strong>Date:</strong> December 13 2025</p>
+        <p style="font-size: 1.2rem; color: #b76e79;"><strong>Reception:</strong> Wadlas Event Center, 12pm</p>
+        <p style="font-size: 1.2rem; color: #b76e79;"><strong>Dress Code:</strong> Lavander, Purple & Gold</p>
+      </div>
+      <form class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
+        <div class="rsvp-success" style="display:none;"></div>
+        <label for="rsvp-name">Your Name *</label>
+        <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Full Name" />
+        <label for="rsvp-email">Email</label>
+        <input type="email" id="rsvp-email" name="email" autocomplete="email" placeholder="Email (optional)" />
+        <label for="rsvp-attending">Will you attend? *</label>
+        <select id="rsvp-attending" name="attending" required>
+          <option value="">Select...</option>
+          <option value="Yes">Yes, I will attend</option>
+          <option value="No">No, I can't make it</option>
+        </select>
+        <label for="rsvp-notes">Notes</label>
+        <textarea id="rsvp-notes" name="notes" rows="2" placeholder="Anything you'd like us to know?"></textarea>
+        <button type="submit" class="btnhover">Send RSVP</button>
+        <div class="rsvp-contacts">
+          <div class="rsvp-contacts-title">RSVP Contacts</div>
+          <ul class="rsvp-contact-list">
+            <li><span class="rsvp-contact-name">Jane:</span> <span class="rsvp-contact-number" style="color: #b76e79;">08102157873 <i class="fa-solid fa-phone" style="color: #b76e79;"></i> <a href="https://wa.me/2348102157873?text=Hello%20I%20would%20like%20to%20confirm%20my%20attendance!"><i class="fa-brands fa-whatsapp" style="color: green;"></i></a></span></li>
+            <li><span class="rsvp-contact-name">Sam:</span> <span class="rsvp-contact-number" style="color: #b76e79;">09034307246 <i class="fa-solid fa-phone" style="color: #b76e79;"></i> <a href="https://wa.me/2349034307246?text=Hello%20I%20would%20like%20to%20confirm%20my%20attendance!"><i class="fa-brands fa-whatsapp" style="color: green;"></i></a></span></li>
+          </ul>
+        </div>
+  <button type="submit" class="invitation-btn">Strictly by invitation</button>
+        <div class="rsvp-list" aria-live="polite" style="display:none;"></div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer redesigned-card">
+    <div class="footer-content">
+  <p>Made with <i class="fa-solid fa-heart"></i> for Daniel & Sunshine's Wedding</p>
+  <p>&copy; 2025 Daniel & Sunshine. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
