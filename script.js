@@ -371,3 +371,31 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(section);
   });
 });
+
+// Scrolling and sliding effect for all sections
+function slideInOnScroll() {
+  var elements = document.querySelectorAll('.redesigned-card, .gallery-section, .vendors-section, .location-section, .registry-unified-section, .invitation-details');
+  var windowHeight = window.innerHeight;
+  elements.forEach(function(el) {
+    var position = el.getBoundingClientRect().top;
+    if (position < windowHeight - 60) {
+      el.style.transition = 'transform 0.7s cubic-bezier(.4,0,.2,1), opacity 0.7s';
+      el.style.transform = 'translateY(0)';
+      el.style.opacity = 1;
+    } else {
+      el.style.transition = 'transform 0.7s cubic-bezier(.4,0,.2,1), opacity 0.7s';
+      el.style.transform = 'translateY(60px)';
+      el.style.opacity = 0.2;
+    }
+  });
+}
+window.addEventListener('scroll', slideInOnScroll);
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial state for sliding effect
+  var elements = document.querySelectorAll('.redesigned-card, .gallery-section, .vendors-section, .location-section, .registry-unified-section, .invitation-details');
+  elements.forEach(function(el) {
+    el.style.transform = 'translateY(60px)';
+    el.style.opacity = 0.2;
+  });
+  slideInOnScroll();
+});
