@@ -506,9 +506,7 @@
   }
 }
 
-.footer-content i.fa-heart {
-  /* color: #b76e79; */
-}
+
 /* Mobile Countdown Styles */
 .mobile-countdown {
   background: linear-gradient(90deg, #7c43bd 0%, lavender 100%);
@@ -1452,6 +1450,45 @@ footer {
     padding: 0.7rem 0.5rem !important;
     box-sizing: border-box !important;
     overflow-x: auto !important;
+  }
+  .gallery-section {
+    padding: 1.2rem 0.5rem !important;
+    margin: 1rem auto !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 12px #7c43bd33 !important;
+    width: 98vw !important;
+    max-width: 99vw !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    gap: 0.7rem !important;
+    width: 100% !important;
+    max-width: 99vw !important;
+    box-sizing: border-box !important;
+    margin: 1rem 0 !important;
+    overflow-x: hidden !important;
+  }
+  .gallery-thumb {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+    aspect-ratio: 1/1 !important;
+    width: 100% !important;
+    max-width: 98vw !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .gallery-thumb img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    max-width: 98vw !important;
   }
 }
 
