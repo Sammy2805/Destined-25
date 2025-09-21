@@ -1,3 +1,98 @@
+// Modern classy countdown to December 13
+document.addEventListener('DOMContentLoaded', function() {
+  var countdownEl = document.getElementById('modern-countdown');
+  if (!countdownEl) return;
+  function pad(n) { return n < 10 ? '0' + n : n; }
+  function updateCountdown() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var target = new Date(year, 11, 13, 0, 0, 0); // December is month 11
+    if (now > target) target = new Date(year + 1, 11, 13, 0, 0, 0);
+    var diff = target - now;
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    var mins = Math.floor((diff / (1000 * 60)) % 60);
+    var secs = Math.floor((diff / 1000) % 60);
+    countdownEl.innerHTML = `
+      <div style="background:#e6e6fa;border:2px solid #7c43bd;border-radius:16px;padding:1.2rem 1.5rem;box-shadow:0 2px 12px #b39ddb;text-align:center;">
+        <span style="font-size:2.2rem;font-weight:700;color:#7c43bd;font-family:'Montserrat', 'Segoe UI', Arial, sans-serif;">${pad(days)}</span>
+        <div style="font-size:1rem;color:#787086;">Days</div>
+      </div>
+      <div style="background:#e6e6fa;border:2px solid #7c43bd;border-radius:16px;padding:1.2rem 1.5rem;box-shadow:0 2px 12px #b39ddb;text-align:center;">
+        <span style="font-size:2.2rem;font-weight:700;color:#7c43bd;font-family:'Montserrat', 'Segoe UI', Arial, sans-serif;">${pad(hours)}</span>
+        <div style="font-size:1rem;color:#787086;">Hours</div>
+      </div>
+      <div style="background:#e6e6fa;border:2px solid #7c43bd;border-radius:16px;padding:1.2rem 1.5rem;box-shadow:0 2px 12px #b39ddb;text-align:center;">
+        <span style="font-size:2.2rem;font-weight:700;color:#7c43bd;font-family:'Montserrat', 'Segoe UI', Arial, sans-serif;">${pad(mins)}</span>
+        <div style="font-size:1rem;color:#787086;">Minutes</div>
+      </div>
+      <div style="background:#e6e6fa;border:2px solid #7c43bd;border-radius:16px;padding:1.2rem 1.5rem;box-shadow:0 2px 12px #b39ddb;text-align:center;">
+        <span style="font-size:2.2rem;font-weight:700;color:#7c43bd;font-family:'Montserrat', 'Segoe UI', Arial, sans-serif;">${pad(secs)}</span>
+        <div style="font-size:1rem;color:#787086;">Seconds</div>
+      </div>
+    `;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
+// Gallery Slideshow Logic
+document.addEventListener('DOMContentLoaded', function() {
+  var slideshowImages = [
+    'SD-1.jpg','SD-2.jpg','SD-3.jpg','SD-4.jpg','SD-5.jpg','SD-6.jpg','SD-7.jpg','SD-8.jpg','SD-9.jpg','SD-10.jpg','SD-11.jpg','SD-12.jpg','sd-13.jpg','sd-14.jpg','sd-15.jpg','sd-16.jpg','sd-17.jpg'
+  ];
+  var slideshowIndex = 0;
+  var slideshowImg = document.getElementById('slideshow-img');
+  var prevBtn = document.getElementById('slideshow-prev');
+  var nextBtn = document.getElementById('slideshow-next');
+  function showSlide(idx) {
+    slideshowImg.src = './destined25-photo-download-1of1/highlights/' + slideshowImages[idx];
+  }
+  if (slideshowImg && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', function() {
+      slideshowIndex = (slideshowIndex - 1 + slideshowImages.length) % slideshowImages.length;
+      showSlide(slideshowIndex);
+    });
+    nextBtn.addEventListener('click', function() {
+      slideshowIndex = (slideshowIndex + 1) % slideshowImages.length;
+      showSlide(slideshowIndex);
+    });
+  }
+});
+// Redirect to YouTube when 'join the stream' is selected
+document.addEventListener('DOMContentLoaded', function() {
+  var rsvpAttending = document.getElementById('rsvp-attending');
+  if (rsvpAttending) {
+    rsvpAttending.addEventListener('change', function() {
+      if (rsvpAttending.value === 'No') {
+        window.open('https://youtube.com/@theresoundingtrumpmediartm9636?si=M2jDOY_4AkT8sJ5X', '_blank');
+      }
+    });
+  }
+});
+// Show Destined highlight when Strictly by invitation button is clicked
+document.addEventListener('DOMContentLoaded', function() {
+  var strictlyBtn = document.getElementById('strictly-btn');
+  var destinedHighlight = document.getElementById('destined-highlight');
+  if (strictlyBtn && destinedHighlight) {
+    strictlyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      destinedHighlight.style.display = destinedHighlight.style.display === 'none' ? 'flex' : 'none';
+      destinedHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+});
+// Show IV highlight when More info button is clicked
+document.addEventListener('DOMContentLoaded', function() {
+  var moreInfoBtn = document.getElementById('more-info-btn');
+  var ivHighlight = document.getElementById('iv-highlight');
+  if (moreInfoBtn && ivHighlight) {
+    moreInfoBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      ivHighlight.style.display = ivHighlight.style.display === 'none' ? 'flex' : 'none';
+      ivHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+});
 // Wedding Website Interactivity
 // Edit this file for all interactive features. See comments for customization.
 
@@ -86,7 +181,7 @@ function updateMainCountdown() {
   const now = new Date();
   let diff = targetDate - now;
   if (diff < 0) {
-    countdownEl.innerHTML = '<span style="font-size:2em;color:#b76e79;font-weight:700;">The big day is here!</span>';
+    countdownEl.innerHTML = '<span style="font-size:2em;color:#7c43bd;font-weight:700;">The big day is here!</span>';
     return;
   }
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -136,7 +231,7 @@ function updateMobileCountdown() {
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
-  countdownEl.innerHTML = `<span style="font-size:1.3em;">🎉</span> <b>${days}</b> days <b>${hours}</b> hrs <b>${minutes}</b> min <b>${seconds}</b> sec until <span style="color:#ffd6e0;font-weight:700;">Dec 13</span>`;
+  countdownEl.innerHTML = `<span style="font-size:1.3em;">🎉</span> <b>${days}</b> days <b>${hours}</b> hrs <b>${minutes}</b> min <b>${seconds}</b> sec until <span style="color:#7c43bd ;font-weight:700;">Dec 13</span>`;
 }
 window.addEventListener('resize', updateMobileCountdown);
 setInterval(updateMobileCountdown, 1000);
