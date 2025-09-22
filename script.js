@@ -1,15 +1,3 @@
-  // Show stream link when appropriate
-  var attendanceSelect = document.getElementById('attendance');
-  var streamLinkDiv = document.getElementById('stream-link');
-  if (attendanceSelect && streamLinkDiv) {
-    attendanceSelect.addEventListener('change', function() {
-      if (attendanceSelect.value === 'Yes, I will join the stream') {
-        streamLinkDiv.style.display = 'block';
-      } else {
-        streamLinkDiv.style.display = 'none';
-      }
-    });
-  }
 // Modern classy countdown to December 13
 document.addEventListener('DOMContentLoaded', function() {
   var countdownEl = document.getElementById('modern-countdown');
@@ -49,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 // Gallery Slideshow Logic
 document.addEventListener('DOMContentLoaded', function() {
-  // Gallery Slideshow Logic
   var slideshowImages = [
     'SD-1.jpg','SD-2.jpg','SD-3.jpg','SD-4.jpg','SD-5.jpg','SD-6.jpg','SD-7.jpg','SD-8.jpg','SD-9.jpg','SD-10.jpg','SD-11.jpg','SD-12.jpg','sd-13.jpg','sd-14.jpg','sd-15.jpg','sd-16.jpg','sd-17.jpg'
   ];
@@ -69,31 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
       slideshowIndex = (slideshowIndex + 1) % slideshowImages.length;
       showSlide(slideshowIndex);
     });
-  }
-
-  // RSVP Netlify Thank You
-  var rsvpForm = document.querySelector('form[name="rsvp"]');
-  if (rsvpForm) {
-    rsvpForm.addEventListener('submit', function(e) {
-      // Let Netlify handle submission, but show thank you immediately
-      setTimeout(function() {
-        rsvpForm.innerHTML = '<div style="text-align:center;padding:2rem 1rem;"><h2 style="color:#7c43bd;">Thank you for your RSVP!</h2><p style="color:#7c43bd;">We have received your response.</p></div>';
-      }, 100);
-    });
-
-    // Show stream link when appropriate
-    var attendanceSelect = document.getElementById('attendance');
-    var streamLinkDiv = document.getElementById('stream-link');
-    if (attendanceSelect && streamLinkDiv) {
-      attendanceSelect.addEventListener('change', function() {
-        if (attendanceSelect.value === 'Yes, I will join the stream') {
-          streamLinkDiv.style.display = 'block';
-          window.open('https://youtube.com/@theresoundingtrumpmediartm9636?si=M2jDOY_4AkT8sJ5X', '_blank');
-        } else {
-          streamLinkDiv.style.display = 'none';
-        }
-      });
-    }
   }
 });
 // Redirect to YouTube when 'join the stream' is selected

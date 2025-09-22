@@ -51,41 +51,29 @@
     <section class="redesigned-invitation" id="invitation" tabindex="-1" style="min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
       <div class="mobile-countdown" id="mobile-countdown"></div>
       <div class="invitation-details redesigned-card" style="max-width: 500px; margin-bottom: 2rem; text-align: center;">
-        <h2 class="redesigned-section-title" style="color:#7c43bd;">Wedding Invitation</h2>
-        <p style="font-size: 1.2rem; color: black;"><strong>Date:</strong> December 13 2025</p>
-        <p style="font-size: 1.2rem; color: black;"><strong>Reception:</strong> Wadlas Event Center, 12pm</p>
-        <p style="font-size: 1.2rem; color: black;"><strong>Dress Code: </strong><span style="color: #7c43bd;">Purple</span> & <span style="color: goldenrod">Gold</span> </p>
+  <h2 class="redesigned-section-title" style="color:#7c43bd;">Wedding Invitation</h2>
+    <p style="font-size: 1.2rem; color: black;"><strong>Date:</strong> December 13 2025</p>
+    <p style="font-size: 1.2rem; color: black;"><strong>Reception:</strong> Wadlas Event Center, 12pm</p>
+    <p style="font-size: 1.2rem; color: black;"><strong>Dress Code: </strong><span style="color: #7c43bd;">Purple</span> & <span style="color: goldenrod">Gold</span> </p>
       </div>
-      <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
-        <input type="hidden" name="form-name" value="rsvp" />
-        <p style="display:none;">
-          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-        </p>
-        <div class="form-group">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" placeholder="Enter your email" required>
-        </div>
-        <div class="form-group">
-          <label for="attendance">Will you be attending? *</label>
-          <select id="attendance" name="attendance" required>
-            <option value="">Select an option</option>
-            <option value="Yes, I will be attending">Yes, I will be attending 🎉</option>
-            <option value="Yes, I will join the stream">Yes, I will join the stream 💻</option>
-          </select>
-          <div id="stream-link" style="display:none; margin-top:0.5rem;">
-            <a href="https://youtube.com/@theresoundingtrumpmediartm9636?si=M2jDOY_4AkT8sJ5X" target="_blank" style="color:#7c43bd;text-decoration:underline;">Join the stream here</a>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="notes">Additional Notes</label>
-          <textarea id="notes" name="notes" placeholder="Any special requests or notes (optional)"></textarea>
-        </div>
-        <button type="submit" class="btn-submit btnhover" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem;">Submit RSVP</button>
-        <button type="button" class="btnhover" id="more-info-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd; margin-top: 0.75rem;">View Invitation Card</button>
+      <form class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
+    <form name="rsvp" method="POST" data-netlify="true" style="max-width: 500px; margin-bottom: 2rem;">
+      <div class="rsvp-success" style="display:none;"></div>
+      <label for="rsvp-name">Full Name *</label>
+      <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Full Name" />
+      <label for="rsvp-email">Email Address</label>
+      <input type="email" id="rsvp-email" name="email" autocomplete="email" placeholder="Email" />
+      <label for="rsvp-attending">Will you be attending? *</label>
+      <select id="rsvp-attending" name="attending" required>
+    <option value="">Select...</option>
+    <option value="Yes">Yes, I will be attending</option>
+    <option value="No">Yes, I will join the stream</option>
+      </select>
+      <label for="rsvp-notes">Additional Notes</label>
+      <textarea id="rsvp-notes" name="notes" rows="2" placeholder="Any details you'd like to share?"></textarea>
+      <button type="submit" class="btnhover" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem;">Submit RSVP</button>
+    </form>
+  <button type="button" class="btnhover" id="more-info-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd;">View Invitation Card</button>
         <div class="rsvp-contacts">
           <div class="rsvp-contacts-title" style="color:#7c43bd;">RSVP Contacts</div>
           <ul class="rsvp-contact-list">
@@ -94,16 +82,16 @@
           </ul>
         </div>
         <div class="rsvp-list" aria-live="polite" style="display:none;"></div>
-        <button type="button" class="invitation-btn" id="strictly-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd; margin-top: 1rem;">Show QR Code</button>
-        <div id="destined-highlight" style="display:none; flex-direction:column; align-items:center; margin-top:2rem;">
-          <img src="destined25-photo-download-1of1/highlights/destined'25 qr code.png" alt="Destined'25 Highlight" style="max-width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.15); border: 3px solid #7c43bd;">
-          <p style="color:#7c43bd; font-size:1.1rem; margin-top:1rem;">Scan this QR code for event details.</p>
-        </div>
-        <div id="iv-highlight" style="display:none; flex-direction:column; align-items:center; margin-top:2rem;">
-          <img src="destined25-photo-download-1of1/highlights/iv.jpg" alt="IV Highlight" style="max-width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.15); border: 3px solid #7c43bd;">
-          <p style="color:#7c43bd; font-size:1.1rem; margin-top:1rem;">View the official invitation card for Destined'25.</p>
-        </div>
-    <!-- Removed duplicate nested form -->
+  <button type="button" class="invitation-btn" id="strictly-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd; margin-top: 1rem;">Show QR Code</button>
+      <div id="destined-highlight" style="display:none; flex-direction:column; align-items:center; margin-top:2rem;">
+        <img src="destined25-photo-download-1of1/highlights/destined'25 qr code.png" alt="Destined'25 Highlight" style="max-width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.15); border: 3px solid #7c43bd;">
+  <p style="color:#7c43bd; font-size:1.1rem; margin-top:1rem;">Scan this QR code for event details.</p>
+      </div>
+      <div id="iv-highlight" style="display:none; flex-direction:column; align-items:center; margin-top:2rem;">
+  <img src="destined25-photo-download-1of1/highlights/iv.jpg" alt="IV Highlight" style="max-width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.15); border: 3px solid #7c43bd;">
+  <p style="color:#7c43bd; font-size:1.1rem; margin-top:1rem;">View the official invitation card for Destined'25.</p>
+      </div>
+      </form>
     </section>
   </main>
   <footer class="site-footer redesigned-card">
