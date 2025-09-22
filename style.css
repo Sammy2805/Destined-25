@@ -1,3 +1,11 @@
+/* Stylish hover effect for View Invitation Card button */
+.redesigned-btn:hover {
+  background: linear-gradient(25deg, lavender, #7c43bd, #7c43bd);
+  color: #7c43bd;
+  box-shadow: 0 6px 24px rgba(124,67,189,0.25);
+  border-color: lavender;
+  transform: translateY(-2px) scale(1.04);
+}
 @media (min-width: 900px) {
   .registry-books-section,
   .honeymoon-support-section {
