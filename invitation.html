@@ -57,28 +57,27 @@
     <p style="font-size: 1.2rem; color: black;"><strong>Dress Code: </strong><span style="color: #7c43bd;">Purple</span> & <span style="color: goldenrod">Gold</span> </p>
       </div>
       <form class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
-        <form name="rsvp" method="POST" data-netlify="true" style="max-width: 500px; margin-bottom: 2rem;">
-          <p>
-            <label>Your Name: <input type="text" name="name" required></label>
+        <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="max-width: 500px; margin-bottom: 2rem;">
+          <input type="hidden" name="form-name" value="rsvp" />
+          <p hidden>
+            <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
           </p>
-          <p>
-            <label>Email: <input type="email" name="email" required></label>
-          </p>
-          <p>
-            <label>Will you attend?
-              <select name="attendance" required>
-                <option value="Yes">Yes, I will be attending</option>
-                <option value="No">Yes, I will join the stream</option>
-              </select>
-            </label>
-          </p>
-          <p>
-            <button type="submit">Submit RSVP</button>
-          </p>
-        </form>
-  <button type="button" class="btnhover redesigned-btn" id="more-info-btn" style="min-width:180px; min-height:48px; font-size:1.1rem; padding:0.85rem 2rem; border-radius:30px; border: 2px solid #7c43bd; background: linear-gradient(25deg, #7c43bd, #7c43bd, lavender); color: white; box-shadow: 0 4px 16px rgba(124,67,189,0.15); font-family:'Montserrat', 'Segoe UI', Arial, sans-serif; transition: background 0.3s, color 0.3s, box-shadow 0.3s; cursor:pointer; letter-spacing:0.5px;"> <i class="fa-regular fa-id-card" style="margin-right:8px;"></i>View Invitation Card</button>
-        <div class="rsvp-contacts">
-          <div class="rsvp-contacts-title" style="color:#7c43bd;">RSVP Contacts</div>
+          <label for="rsvp-name">Full Name *</label>
+          <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Full Name" />
+          <label for="rsvp-email">Email Address</label>
+          <input type="email" id="rsvp-email" name="email" required autocomplete="email" placeholder="Email" />
+          <label for="rsvp-attending">Will you be attending? *</label>
+          <select id="rsvp-attending" name="attending" required>
+            <option value="">Select...</option>
+            <option value="Yes">Yes, I will be attending</option>
+            <option value="No">Yes, I will join the stream</option>
+          </select>
+          <label for="rsvp-notes">Additional Notes</label>
+          <textarea id="rsvp-notes" name="notes" rows="2" placeholder="Any details you'd like to share?"></textarea>
+          <button type="submit" class="btnhover" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem;">Submit RSVP</button>
+          <button type="button" class="btnhover" id="more-info-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd;">View Invitation Card</button>
+          <div class="rsvp-contacts">
+            <div class="rsvp-contacts-title" style="color:#7c43bd;">RSVP Contacts</div>
           <ul class="rsvp-contact-list">
             <li><span class="rsvp-contact-name" style="color:#7c43bd;">Jane:</span> <span class="rsvp-contact-number" style="color: #7c43bd;">08102157873 <i class="fa-solid fa-phone" style="color: #7c43bd;"></i> <a href="https://wa.me/2348102157873?text=Hello%20I%20would%20like%20to%20confirm%20my%20attendance!"><i class="fa-brands fa-whatsapp" style="color: #7c43bd;"></i></a></span></li>
             <li><span class="rsvp-contact-name" style="color:#7c43bd;">Sam:</span> <span class="rsvp-contact-number" style="color: #7c43bd;">09034307246 <i class="fa-solid fa-phone" style="color: #7c43bd;"></i> <a href="https://wa.me/2349034307246?text=Hello%20I%20would%20like%20to%20confirm%20my%20attendance!"><i class="fa-brands fa-whatsapp" style="color: #7c43bd;"></i></a></span></li>
