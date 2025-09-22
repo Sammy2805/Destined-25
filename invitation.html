@@ -57,23 +57,20 @@
     <p style="font-size: 1.2rem; color: black;"><strong>Dress Code: </strong><span style="color: #7c43bd;">Purple</span> & <span style="color: goldenrod">Gold</span> </p>
       </div>
       <form class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
-    <form name="rsvp" method="POST" data-netlify="true" style="max-width: 500px; margin-bottom: 2rem;">
-          <input type="hidden" name="form-name" value="rsvp">
-      <div class="rsvp-success" style="display:none;"></div>
-      <label for="rsvp-name">Full Name *</label>
-      <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Full Name" />
-      <label for="rsvp-email">Email Address</label>
-      <input type="email" id="rsvp-email" name="email" autocomplete="email" placeholder="Email" />
-      <label for="rsvp-attending">Will you be attending? *</label>
-      <select id="rsvp-attending" name="attending" required>
-    <option value="">Select...</option>
-    <option value="Yes">Yes, I will be attending</option>
-    <option value="No">Yes, I will join the stream</option>
-      </select>
-      <label for="rsvp-notes">Additional Notes</label>
-      <textarea id="rsvp-notes" name="notes" rows="2" placeholder="Any details you'd like to share?"></textarea>
-      <button type="submit" class="btnhover" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem;">Submit RSVP</button>
-    </form>
+        <div class="rsvp-success" style="display:none;"></div>
+  <label for="rsvp-name">Full Name *</label>
+        <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Full Name" />
+  <label for="rsvp-email">Email Address</label>
+        <input type="email" id="rsvp-email" name="email" autocomplete="email" placeholder="Email" />
+  <label for="rsvp-attending">Will you be attending? *</label>
+        <select id="rsvp-attending" name="attending" required>
+          <option value="">Select...</option>
+          <option value="Yes">Yes, I will be attending</option>
+          <option value="No">Yes, I will join the stream</option>
+        </select>
+  <label for="rsvp-notes">Additional Notes</label>
+  <textarea id="rsvp-notes" name="notes" rows="2" placeholder="Any details you'd like to share?"></textarea>
+  <button type="submit" class="btnhover" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem;">Submit RSVP</button>
   <button type="button" class="btnhover" id="more-info-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd;">View Invitation Card</button>
         <div class="rsvp-contacts">
           <div class="rsvp-contacts-title" style="color:#7c43bd;">RSVP Contacts</div>
