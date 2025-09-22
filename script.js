@@ -68,6 +68,20 @@ document.addEventListener('DOMContentLoaded', function() {
         rsvpForm.innerHTML = '<div style="text-align:center;padding:2rem 1rem;"><h2 style="color:#7c43bd;">Thank you for your RSVP!</h2><p style="color:#7c43bd;">We have received your response.</p></div>';
       }, 100);
     });
+
+    // Show stream link when appropriate
+    var attendanceSelect = document.getElementById('attendance');
+    var streamLinkDiv = document.getElementById('stream-link');
+    if (attendanceSelect && streamLinkDiv) {
+      attendanceSelect.addEventListener('change', function() {
+        if (attendanceSelect.value === 'Yes, I will join the stream') {
+          streamLinkDiv.style.display = 'block';
+          window.open('https://youtube.com/@theresoundingtrumpmediartm9636?si=M2jDOY_4AkT8sJ5X', '_blank');
+        } else {
+          streamLinkDiv.style.display = 'none';
+        }
+      });
+    }
   }
 });
 // Redirect to YouTube when 'join the stream' is selected
