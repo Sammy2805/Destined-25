@@ -1,3 +1,15 @@
+  // Show stream link when appropriate
+  var attendanceSelect = document.getElementById('attendance');
+  var streamLinkDiv = document.getElementById('stream-link');
+  if (attendanceSelect && streamLinkDiv) {
+    attendanceSelect.addEventListener('change', function() {
+      if (attendanceSelect.value === 'Yes, I will join the stream') {
+        streamLinkDiv.style.display = 'block';
+      } else {
+        streamLinkDiv.style.display = 'none';
+      }
+    });
+  }
 // Modern classy countdown to December 13
 document.addEventListener('DOMContentLoaded', function() {
   var countdownEl = document.getElementById('modern-countdown');

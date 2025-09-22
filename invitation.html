@@ -56,7 +56,7 @@
         <p style="font-size: 1.2rem; color: black;"><strong>Reception:</strong> Wadlas Event Center, 12pm</p>
         <p style="font-size: 1.2rem; color: black;"><strong>Dress Code: </strong><span style="color: #7c43bd;">Purple</span> & <span style="color: goldenrod">Gold</span> </p>
       </div>
-      <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
+      <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
         <input type="hidden" name="form-name" value="rsvp" />
         <div class="form-group">
           <label for="name">Full Name *</label>
@@ -72,19 +72,17 @@
             <option value="">Select an option</option>
             <option value="Yes, I will be attending">Yes, I will be attending 🎉</option>
             <option value="Yes, I will join the stream">Yes, I will join the stream 💻</option>
-            <!-- <option value="No, I cannot attend">No, I cannot attend 😢</option> -->
           </select>
           <div id="stream-link" style="display:none; margin-top:0.5rem;">
             <a href="https://youtube.com/@theresoundingtrumpmediartm9636?si=M2jDOY_4AkT8sJ5X" target="_blank" style="color:#7c43bd;text-decoration:underline;">Join the stream here</a>
           </div>
-          </select>
         </div>
         <div class="form-group">
           <label for="notes">Additional Notes</label>
           <textarea id="notes" name="notes" placeholder="Any special requests or notes (optional)"></textarea>
         </div>
         <button type="submit" class="btn-submit btnhover" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem;">Submit RSVP</button>
-  <button type="button" class="btnhover" id="more-info-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd; margin-top: 0.75rem;">View Invitation Card</button>
+        <button type="button" class="btnhover" id="more-info-btn" style="min-width:160px; min-height:44px; font-size:1rem; padding:0.75rem 1.5rem; border: 2px solid #7c43bd; margin-top: 0.75rem;">View Invitation Card</button>
         <div class="rsvp-contacts">
           <div class="rsvp-contacts-title" style="color:#7c43bd;">RSVP Contacts</div>
           <ul class="rsvp-contact-list">
@@ -102,11 +100,7 @@
           <img src="destined25-photo-download-1of1/highlights/iv.jpg" alt="IV Highlight" style="max-width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.15); border: 3px solid #7c43bd;">
           <p style="color:#7c43bd; font-size:1.1rem; margin-top:1rem;">View the official invitation card for Destined'25.</p>
         </div>
-        <form name="rsvp" method="POST" data-netlify="true" action="/thank-you.html">
-  <!-- Required hidden input for Netlify -->
-  <input type="hidden" name="form-name" value="rsvp">
-  
-      </form>
+    <!-- Removed duplicate nested form -->
     </section>
   </main>
   <footer class="site-footer redesigned-card">
