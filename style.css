@@ -1491,4 +1491,11 @@ footer {
     max-width: 98vw !important;
   }
 }
+@media (max-width: 700px) {
+  .invitations-buttons-rsvp {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
 
