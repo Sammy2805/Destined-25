@@ -56,7 +56,7 @@
     <p style="font-size: 1.2rem; color: black;"><strong>Reception:</strong> Wadlas Event Center, 12pm</p>
     <p style="font-size: 1.2rem; color: black;"><strong>Dress Code: </strong><span style="color: #7c43bd;">Purple</span> & <span style="color: goldenrod">Gold</span> </p>
       </div>
-      <form class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
+      <form id="rsvp-form" class="rsvp-form redesigned-card" aria-label="RSVP Form" autocomplete="off" style="max-width: 500px; margin-bottom: 2rem;">
         <div class="rsvp-success" style="display:none;"></div>
   <label for="rsvp-name">Full Name *</label>
         <input type="text" id="rsvp-name" name="name" required autocomplete="name" placeholder="Full Name" />
@@ -101,5 +101,23 @@
       </div>
     </footer>
   <script src="script.js"></script>
+  <!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+(function() {
+  emailjs.init("omqYUfxnKLsnnOMxL"); // Your EmailJS User ID
+})();
+
+document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  emailjs.sendForm('service_sg9okxr', 'template_qbvn6ph', this)
+    .then(function() {
+      alert('RSVP sent successfully!');
+      document.getElementById('rsvp-form').reset();
+    }, function(error) {
+      alert('Failed to send RSVP. Please try again.');
+    });
+});
+</script>
 </body>
 </html>
